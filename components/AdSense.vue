@@ -11,12 +11,6 @@
       ></ins>
     </div>
   </div>
-  <div v-else class="adsense-container adsense-container--placeholder">
-    <div class="adsense-container__placeholder">
-      <p class="adsense-container__placeholder-text">AdSense Werbung</p>
-      <p class="adsense-container__placeholder-hint">Client-ID und Slot-ID werden konfiguriert</p>
-    </div>
-  </div>
 </template>
 
 <script setup lang="ts">
