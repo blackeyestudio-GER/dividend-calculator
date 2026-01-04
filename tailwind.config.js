@@ -1,5 +1,4 @@
 /** @type {import('tailwindcss').Config} */
-/** https://coolors.co/3aa1bd-586667-1c1e1e-111212-1e4545 */
 export default {
   content: [
     "./components/**/*.{js,vue,ts}",
@@ -9,19 +8,74 @@ export default {
     "./app.vue",
     "./error.vue",
   ],
+  darkMode: 'class',
   theme: {
-    colors: {
-      'moonstone': '#3AA1BD',
-      'dim-gray': '#869698',
-      //'dim-gray': '#586667',
-      'eerie-black': '#1C1E1E',
-      'night': '#111212',
-      'dark-slate-gray': '#1E4545',
-    },
     extend: {
-      saturate: {
-        25: '.25',
-        75: '.75',
+      colors: {
+        // Light Theme Colors
+        light: {
+          bg: '#FFFFFF',
+          surface: '#F8F9FA',
+          card: '#FFFFFF',
+          border: '#E5E7EB',
+          text: {
+            primary: '#111827',
+            secondary: '#6B7280',
+            muted: '#9CA3AF',
+          },
+          primary: {
+            DEFAULT: '#171717',
+            hover: '#262626',
+            light: '#F5F5F5',
+          },
+          accent: {
+            DEFAULT: '#10B981',
+            hover: '#059669',
+          },
+          // Dezente Akzente
+          magenta: {
+            DEFAULT: '#EC4899',
+            hover: '#DB2777',
+            light: '#FCE7F3',
+          },
+          cyan: {
+            DEFAULT: '#06B6D4',
+            hover: '#0891B2',
+            light: '#CFFAFE',
+          },
+        },
+        // Dark Theme Colors - Business Schwarz/Grau
+        dark: {
+          bg: '#0A0A0A',
+          surface: '#1A1A1A',
+          card: '#252525',
+          border: '#3A3A3A',
+          text: {
+            primary: '#F5F5F5',
+            secondary: '#D4D4D4',
+            muted: '#A3A3A3',
+          },
+          primary: {
+            DEFAULT: '#171717',
+            hover: '#262626',
+            light: '#404040',
+          },
+          accent: {
+            DEFAULT: '#10B981',
+            hover: '#059669',
+          },
+          // Dezente Akzente
+          magenta: {
+            DEFAULT: '#EC4899',
+            hover: '#DB2777',
+            light: '#FCE7F3',
+          },
+          cyan: {
+            DEFAULT: '#06B6D4',
+            hover: '#0891B2',
+            light: '#CFFAFE',
+          },
+        },
       },
     },
   },

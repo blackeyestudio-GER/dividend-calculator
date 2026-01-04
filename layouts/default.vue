@@ -1,19 +1,38 @@
 <template>
-  <div>
+  <div class="min-h-screen flex flex-col">
     <NuxtLoadingIndicator :throttle="0" :height="2" />
     <AppHeader />
-    <div class="mx-2 max-w-screen-2xl lg:mx-auto my-2">
+    <main class="flex-grow">
       <slot />
-    </div>
+    </main>
     <AppFooter />
+    <CookieBanner />
   </div>
 </template>
 
 <script setup lang="ts">
+const { initTheme } = useTheme()
+
+onMounted(() => {
+  initTheme()
+})
+
 useHead({
-  titleTemplate: (title) => title ? `${title} - template` : 'template',
+  titleTemplate: (title) => title ? `${title} - Finanzfreiheit` : 'Finanzfreiheit',
+  script: [
+    {
+      children: `
+        (function() {
+          const savedTheme = localStorage.getItem('theme');
+          if (savedTheme === 'dark') {
+            document.documentElement.classList.add('dark');
+          } else {
+            document.documentElement.classList.remove('dark');
+          }
+        })();
+      `,
+      type: 'text/javascript'
+    }
+  ]
 })
 </script>
-<style scoped>
-
-</style>
